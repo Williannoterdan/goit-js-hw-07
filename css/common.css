@@ -8,10 +8,41 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: wheat;
   color: #212121;
   line-height: 1.5;
 
+}
+body ul{
+  background-color: var();
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+body ul li a{
+  background-color: var(--color-buton-positiv);
+  border: 3px solid var(--color-txt-one);
+  border-radius: 5%;
+  text-decoration: none;
+  color: var(--color-background-one);
+  font-size: 40px;
+}
+body ul li a:hover,
+body ul li a:focus{
+background-color: var(--color-buton-positiv-hover);
+color: var(--color-txt-one);
+}
+body p a{
+  background-color: var(--color-buton-negativ);
+  border: 3px solid var(--color-txt-one);
+  color: var(--color-buton-txt);
+  border-radius: 25%;
+  text-decoration: none;
+}
+body p a:hover,
+body p a:focus{
+  background-color: var(--color-buton-negativ-hover);
+  color: var(--color-txt-one);
 }
 :root {
   --color-buton-negativ: #FF4E4E;
@@ -19,15 +50,75 @@ body {
   --color-buton-txt:  #FFF;
   --color-buton-positiv:#4E75FF;
   --color-buton-positiv-hover:#6C8CFF;
+  --color-background-one: #F6F6FE;
+  --color-background-two: #808080;
+  --color-txt-one:#2E2F42;
 }
-.gallery{
+
+/* Task1 */
+#categories{
+  display: inline-flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 8px;
+    background: var(--color-buton-txt);
+    width: 440px;
+}
+#categories h2{
+  color: var(--color-txt-one);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.96px;
+    margin: 0;
+    padding: 0;
+}
+
+.item{
+  background-color: var(--color-background-one);
+
+  color: var(--color-txt-one);
+  border-radius: 8px;
+  display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    
+}
+.item ul{
+  padding: 0;
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    list-style: none;
+}
+.item ul li{
+  padding: 8px 16px 8px;
+  margin: 0;
+  width: 360px;
+  border: 1px solid var(--color-background-two);
+  border-radius: 4px;
+  text-align: left;
+
+  
+}
+
+/* Task2 */
+
+.gallery {
   flex-direction: row;
-  list-style: none; 
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-gap: 24px;
+  gap: 24px;
   padding-inline-start: 0px;
 }
+
 .task2-LiSt1{
   display: contents;
 }
@@ -43,7 +134,13 @@ gap: 24px;
   width: 85%;
   max-width: 1000px;
   margin: auto;
+  padding: 8px;
   transition-duration: 2s;
+}
+.task2-ImgSt1:hover{
+cursor: pointer;
+border-radius: 30%;
+border: 8px solid var(--color-buton-positiv-hover);
 }
 .task2-div{
 
@@ -66,6 +163,11 @@ gap: 24px;
   background-color: var(--color-buton-negativ);
   color: var(--color-buton-txt);
 }
+.buton-task-two-negativ:hover,
+.buton-task-two-negativ:focus{
+    border-color: var(--color-buton-negativ-hover);
+      background-color: var(--color-buton-negativ-hover);
+}
 .modal-img-text{
   color: var(--color-buton-txt);
 
@@ -86,4 +188,114 @@ gap: 24px;
       border-radius: 50%;
       color: var(--color-buton-txt);
       text-align: center;
+}
+.buton-direktion:focus,
+.buton-direktion:hover{
+      border-color: var(--color-buton-positiv-hover);
+        background-color: var(--color-buton-positiv-hover);
+}
+/* task4 */
+.login-form{
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: var(--color-background-one);
+  width: max-content;
+  border-radius: 8px;
+  gap: 16px;
+}
+.login-form button{
+  border-radius: 8px;
+    background: var(--color-buton-positiv);
+    display: flex;
+      padding: 8px 16px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 54px;
+      border: 0px;
+      color: var(--color-background-one);
+}
+.login-form input{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/*  task-5 */
+.widget{
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  align-items: center;
+  background-color: var(--color-background-one);
+  border-radius: 5px;
+  padding: 100px 88px;
+}
+.change-color{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    letter-spacing: 0.64px;
+    background-color: var(--color-buton-positiv);
+    border: 0px;
+    border-radius: 8px;
+    color: var(--color-buton-txt);
+    width: max-content;
+    padding: 8px 16px;
+}
+/* task6 */
+#controls{
+  background-color: var(--color-background-one);
+  padding: 32px;
+  display: flex;
+  flex-direction: row;
+  gap:16px;
+  width: max-content;
+  border-radius: 8px;
+}
+#controls input{
+  border-radius: 8px;
+  text-align: center;
+}
+button[data-create]{
+  background-color: var(--color-buton-positiv);
+  border: 0px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: var(--color-buton-txt);
+}
+button[data-create]:focus,
+button[data-create]:hover{
+  background-color: var(--color-buton-positiv-hover);
+}
+button[data-destroy]{
+    background-color: var(--color-buton-negativ);
+      border: 0px;
+      border-radius: 8px;
+      padding: 8px 16px;
+      color: var(--color-buton-txt);
+}
+button[data-destroy]:focus,
+button[data-destroy]:hover {
+  background-color: var(--color-buton-negativ-hover);
+}
+
+#boxes{
+margin-top: 515px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+#boxes div {
+  position: absolute;
+  
+
 }

@@ -2,14 +2,12 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
-}
-
-var generation = 0;
+} 
 function generationCreate(generation, number) {
   return `generation:${generation},element:${number+1}`
 }
 
-function death(length) {
+function destroyBoxes(length) {
   for (let i = 0; i < length; i++) {
         boxesDiv.querySelector(".death").remove();
     
@@ -27,25 +25,26 @@ console.log(boxesDiv.children);
 
 
 buttonCreate.addEventListener("click", event => {
-    death(boxesDiv.children.length)
+    destroyBoxes(boxesDiv.children.length)
   var numberCreate = document.querySelector("input").value
   console.log("sasa")
   console.log(numberCreate);
-  function createBoxes(numberCreate) {
+  if (numberCreate < 101 && numberCreate > 0) {
+    function createBoxes(numberCreate) {
     
-        var length = 30;
-    for (let i = 0; i < numberCreate; i++) {
+      var length = 30;
+      for (let i = 0; i < numberCreate; i++) {
 
-    boxesDiv.insertAdjacentHTML("beforeend", `<div class="death" style="display: flex; background-color:${getRandomHexColor()};   width:${length}px ;height: ${length}px; ;"><p>${generationCreate(generation, i)}</p></div>`)
-    length+=10;
-  }
+        boxesDiv.insertAdjacentHTML("afterbegin", `<div class="death" style="display: flex; background-color:${getRandomHexColor()};   width:${length}px ;height: ${length}px; ;"></div>`)
+        length += 10;
+      }
     
+    }
+    createBoxes(numberCreate);
   }
-  createBoxes(numberCreate);
-  generation += 1;
 })
 
 buttonDestroy.addEventListener("click", event => { 
 console.log(boxesDiv.children.length);
-  death(boxesDiv.children.length)
+  destroyBoxes(boxesDiv.children.length)
 })

@@ -27,7 +27,6 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
-console.log(images[0]);
 
 
 function imgBigChange(elem) {
@@ -66,22 +65,17 @@ function imgBigChange(elem) {
   </div>`)
   // elem.setAttribute("class", "task2-ImgSt2")
   document.querySelector(".buton-task-two-negativ").addEventListener("click",()=>{
-    console.log("negato")
     document.querySelector(".task2-div").remove()
   })
   document.querySelector(".buton-task-two-left").addEventListener("click", () => {
     imgGooUp()
-    console.log("negato1")
     let imgChange = document.querySelector(".task2-ImgSt2")
-    console.log(imgChange);
     imgChange.setAttribute("src", `${images[imgNumber].url}`)
     document.querySelector (".modal-img-text").textContent=`${images[imgNumber].alt}`
   })
     document.querySelector(".buton-task-two-rait").addEventListener("click", () => {
     imgGooDawn()
-    console.log("negato1")
     let imgChange = document.querySelector(".task2-ImgSt2")
-    console.log(imgChange);
     imgChange.setAttribute("src", `${images[imgNumber].url}`)
     document.querySelector (".modal-img-text").textContent=`${images[imgNumber].alt}`
   })
@@ -100,18 +94,28 @@ images.forEach(element => {
   sensetivIndex += 1;
 });
 
-// document.querySelector("focus-atribut1").addEventListener("focus", event => {
-//   const cio = document.querySelector("img");
-//   console.log(event.target.alt);
-    
-  // setTimeout(() => {
-  //   imgGouReset(event.target)
-  // }, 6000);
-// })
-
 
 document.querySelector("img[focus-atribut0]").addEventListener("focus", event => {
   imgBigChange(event.target.alt)
-  console.log("soiui");
-})
 
+})
+document.querySelector("img[focus-atribut1]").addEventListener("focus", event => {
+  imgBigChange(event.target.alt)
+
+})
+document.querySelector("img[focus-atribut2]").addEventListener("focus", event => {
+  imgBigChange(event.target.alt)
+
+})
+document.querySelector("img[focus-atribut3]").addEventListener("focus", event => {
+  imgBigChange(event.target.alt)
+
+})
+document.querySelector("img[focus-atribut4]").addEventListener("focus", event => {
+  imgBigChange(event.target.alt)
+
+})
+document.querySelector("img[focus-atribut5]").addEventListener("focus", event => {
+  imgBigChange(event.target.alt)
+
+})
