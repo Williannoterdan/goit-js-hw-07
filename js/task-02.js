@@ -27,11 +27,91 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
+console.log(images[0]);
+
+
+function imgBigChange(elem) {
+  console.log(elem)
+  let imgHtml = "";
+  let imgNumber = -1;
+  function imgGooUp() {
+    if (imgNumber === 5) {
+      imgNumber = 0
+    }
+    else{imgNumber += 1;}
+    
+  }
+  function imgGooDawn() {
+      if (imgNumber === 0) {
+        imgNumber = 5;
+      }
+      else {
+        imgNumber -= 1;
+      }
+  }
+  images.forEach(e => { 
+    
+    if (elem === e.alt) {
+      imgGooUp();
+      console.log(imgNumber);
+
+      return imgHtml = e
+    }
+  })
+  document.body.insertAdjacentHTML("afterbegin", `<div class="task2-div"><button class="buton-task-two-negativ">close</button>
+  <img src="${imgHtml.url}" alt="${imgHtml.alt}" class="task2-ImgSt2">
+  <p class="modal-img-text">${imgHtml.alt}</p>
+  <div class="task2-div-two"><button class="buton-task-two-left buton-direktion"><-</button>
+  <button class="buton-task-two-rait buton-direktion">-></button></div>
+  </div>`)
+  // elem.setAttribute("class", "task2-ImgSt2")
+  document.querySelector(".buton-task-two-negativ").addEventListener("click",()=>{
+    console.log("negato")
+    document.querySelector(".task2-div").remove()
+  })
+  document.querySelector(".buton-task-two-left").addEventListener("click", () => {
+    imgGooUp()
+    console.log("negato1")
+    let imgChange = document.querySelector(".task2-ImgSt2")
+    console.log(imgChange);
+    imgChange.setAttribute("src", `${images[imgNumber].url}`)
+    document.querySelector (".modal-img-text").textContent=`${images[imgNumber].alt}`
+  })
+    document.querySelector(".buton-task-two-rait").addEventListener("click", () => {
+    imgGooDawn()
+    console.log("negato1")
+    let imgChange = document.querySelector(".task2-ImgSt2")
+    console.log(imgChange);
+    imgChange.setAttribute("src", `${images[imgNumber].url}`)
+    document.querySelector (".modal-img-text").textContent=`${images[imgNumber].alt}`
+  })
+}
+function imgGouReset(elem) {
+  elem.setAttribute("class", "task2-ImgSt1")
+}
+
+
 const gallery = document.querySelector(".gallery");
+   let sensetivIndex = 0;
 images.forEach(element => {
-  var imgCry = `<li style=" ")><img src="${element.url}" alt="${element.alt}"    width="100%"></li> `;
+ 
+  let imgCry = `<li class="task2-LiSt1" )><img tabindex="${sensetivIndex}" src="${element.url}" alt="${element.alt}" class="task2-ImgSt1" focus-atribut${sensetivIndex}></li> `;
   gallery.insertAdjacentHTML("beforeend", imgCry);
+  sensetivIndex += 1;
 });
 
+// document.querySelector("focus-atribut1").addEventListener("focus", event => {
+//   const cio = document.querySelector("img");
+//   console.log(event.target.alt);
+    
+  // setTimeout(() => {
+  //   imgGouReset(event.target)
+  // }, 6000);
+// })
 
-document.querySelector("ul").setAttribute("style", "list-style: none; display: flex;flex-wrap: wrap; margin: 0;pzding:0;padding-inline-start: 0px;");
+
+document.querySelector("img[focus-atribut0]").addEventListener("focus", event => {
+  imgBigChange(event.target.alt)
+  console.log("soiui");
+})
+

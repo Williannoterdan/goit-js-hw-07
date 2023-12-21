@@ -9,4 +9,6 @@ items.forEach(element => {
 // categories.querySelectorAll(".item").forEach(element, ind => {
 //     console.log(element);
 // });
-
+// various array
+// various array
+// various array
