@@ -28,17 +28,13 @@ const images = [
   },
 ];
 
-
+var imgNumber = 0;
 function imgBigChange(elem) {
   console.log(elem)
   let imgHtml = "";
-  let imgNumber = -1;
+  
   function imgGooUp() {
-    if (imgNumber === 5) {
-      imgNumber = 0
-    }
-    else{imgNumber += 1;}
-    
+    imgNumber = (imgNumber+1)%6;
   }
   function imgGooDawn() {
       if (imgNumber === 0) {
@@ -51,7 +47,8 @@ function imgBigChange(elem) {
   images.forEach(e => { 
     
     if (elem === e.alt) {
-      imgGooUp();
+      imgNumber += 1;
+
       console.log(imgNumber);
 
       return imgHtml = e
@@ -68,13 +65,13 @@ function imgBigChange(elem) {
     document.querySelector(".task2-div").remove()
   })
   document.querySelector(".buton-task-two-left").addEventListener("click", () => {
-    imgGooUp()
+    imgGooDawn()
     let imgChange = document.querySelector(".task2-ImgSt2")
     imgChange.setAttribute("src", `${images[imgNumber].url}`)
     document.querySelector (".modal-img-text").textContent=`${images[imgNumber].alt}`
   })
     document.querySelector(".buton-task-two-rait").addEventListener("click", () => {
-    imgGooDawn()
+    imgGooUp()
     let imgChange = document.querySelector(".task2-ImgSt2")
     imgChange.setAttribute("src", `${images[imgNumber].url}`)
     document.querySelector (".modal-img-text").textContent=`${images[imgNumber].alt}`
