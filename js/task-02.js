@@ -26,17 +26,17 @@ const images = [
 ];
 var imgNumber = 0;
 function imgBigChange(elem) {
-  console.log(elem);
+  // console.log(elem);
   let imgHtml = "";
-  
+
   function imgGooUp() {
-    console.log("UpEnterNumber  ",imgNumber);
+    // console.log("UpEnterNumber  ",imgNumber);
     if (imgNumber === 5) {
       imgNumber = 0;
     } else {
       imgNumber += 1;
     }
-    console.log(imgNumber);
+    // console.log(imgNumber);
   }
   function imgGooDawn() {
     if (imgNumber === 0) {
@@ -46,20 +46,18 @@ function imgBigChange(elem) {
     }
   }
   var tempNamber = -1;
-  images.forEach((e ) => {
+  images.forEach((e) => {
     tempNamber += 1;
     if (elem === e.alt) {
-      console.log("finish");
+      // console.log("finish");
       imgNumber = tempNamber;
-      imgHtml=e;
-      console.log(imgHtml);
+      imgHtml = e;
+      // console.log(imgHtml);
       return imgHtml;
-      
     }
-    console.log(tempNamber);
-
+    // console.log(tempNamber);
   });
-  
+
   document.body.insertAdjacentHTML(
     "afterbegin",
     `<div class="task2-div"><button class="buton-task-two-negativ">close</button>
