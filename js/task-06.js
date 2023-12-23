@@ -7,6 +7,7 @@ function generationCreate(generation, number) {
   return `generation:${generation},element:${number+1}`
 }
 
+ 
 function destroyBoxes(length) {
   for (let i = 0; i < length; i++) {
         boxesDiv.querySelector(".death").remove();
