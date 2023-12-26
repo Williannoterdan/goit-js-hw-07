@@ -28,8 +28,8 @@ console.log(boxesDiv.children);
 buttonCreate.addEventListener("click", event => {
     destroyBoxes(boxesDiv.children.length)
   var numberCreate = document.querySelector("input").value
-  console.log("sasa")
-  console.log(numberCreate);
+  // console.log("sasa")
+  // console.log(numberCreate);
   if (numberCreate < 101 && numberCreate > 0) {
     function createBoxes(numberCreate) {
     
@@ -41,7 +41,7 @@ buttonCreate.addEventListener("click", event => {
       }
     
     }
-    createBoxes(numberCreate);
+    // createBoxes(numberCreate);
   }
 })
 
