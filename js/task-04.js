@@ -1,5 +1,5 @@
 let formas = document.querySelector("form.login-form");
-console.log(formas);
+// console.log(formas);
 let baseUser = { email: "", password: "" };
 formas.addEventListener("submit", event => {
 

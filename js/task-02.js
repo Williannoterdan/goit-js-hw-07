@@ -24,6 +24,24 @@ const images = [
     alt: "Zebras on Zebra",
   },
 ];
+
+const gallery = document.querySelector('.gallery')
+let sensetivIndex = 0
+images.forEach((element) => {
+    let imgCry = `<li class="task2-LiSt1" )><img tabindex="${sensetivIndex}" src="${element.url}" alt="${element.alt}" class="task2-ImgSt1" focus-atribut${sensetivIndex}></li> `
+    gallery.insertAdjacentHTML('beforeend', imgCry)
+    sensetivIndex += 1
+})
+
+
+
+
+
+// Відсебенька
+
+
+
+
 var imgNumber = 0;
 function imgBigChange(elem) {
   // console.log(elem);
@@ -99,13 +117,7 @@ function imgGouReset(elem) {
   elem.setAttribute("class", "task2-ImgSt1");
 }
 
-const gallery = document.querySelector(".gallery");
-let sensetivIndex = 0;
-images.forEach((element) => {
-  let imgCry = `<li class="task2-LiSt1" )><img tabindex="${sensetivIndex}" src="${element.url}" alt="${element.alt}" class="task2-ImgSt1" focus-atribut${sensetivIndex}></li> `;
-  gallery.insertAdjacentHTML("beforeend", imgCry);
-  sensetivIndex += 1;
-});
+
 
 document
   .querySelector("img[focus-atribut0]")
