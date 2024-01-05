@@ -25,20 +25,13 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery');
-gallery.insertAdjacentHTML(
-    'afterbegin',
-    images.map(
-        (x, index) =>
-            `<li class="task2-LiSt1" ><img tabindex="${index}" src="${x.url}" alt="${x.alt}" class="task2-ImgSt1" focus-atribut${index}></li>`
-    ).join("")
-)
-
-// images.forEach((element) => {
-//     let imgCry = `<li class="task2-LiSt1" )><img tabindex="${sensetivIndex}" src="${element.url}" alt="${element.alt}" class="task2-ImgSt1" focus-atribut${sensetivIndex}></li> `
-//     gallery.insertAdjacentHTML('beforeend', imgCry)
-//     sensetivIndex += 1
-// })
+const gallery = document.querySelector('.gallery')
+let sensetivIndex = 0
+images.forEach((element) => {
+    let imgCry = `<li class="task2-LiSt1" )><img tabindex="${sensetivIndex}" src="${element.url}" alt="${element.alt}" class="task2-ImgSt1" focus-atribut${sensetivIndex}></li> `
+    gallery.insertAdjacentHTML('beforeend', imgCry)
+    sensetivIndex += 1
+})
 
 
 
