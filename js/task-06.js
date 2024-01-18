@@ -41,7 +41,7 @@ buttonCreate.addEventListener("click", event => {
       }
     
     }
-    // createBoxes(numberCreate);
+     createBoxes(numberCreate);
   }
 })
 

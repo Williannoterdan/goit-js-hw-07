@@ -12,6 +12,7 @@ triger.addEventListener("input", () => {
     }
     else {
         variableName = "Anonymous";
+        document.querySelector('span#name-output').textContent = variableName
     }
     console.log("azza")
    document.querySelector("a").addEventListener("mouseover", event => {
