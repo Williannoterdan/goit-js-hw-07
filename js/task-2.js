@@ -35,6 +35,3 @@ gallery.insertAdjacentHTML(
         )
         .join('')
 )
-
-
-
