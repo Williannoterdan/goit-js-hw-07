@@ -7,41 +7,28 @@ function generationCreate(generation, number) {
     return `generation:${generation},element:${number + 1}`
 }
 
-function destroyBoxes(length) {
-    for (let i = 0; i < length; i++) {
-        boxesDiv.querySelector('.death').remove()
-    }
-}
-
-var boxesDiv = document.querySelector('#boxes')
-boxesDiv.setAttribute('style', 'display: flexbox; flex-wrap: wrap;')
+let boxesDiv = document.querySelector('#boxes')
 
 const buttonCreate = document.querySelector('button[data-create]')
 const buttonDestroy = document.querySelector('button[data-destroy]')
 
 console.log(boxesDiv.children)
 
-buttonCreate.addEventListener('click', (event) => {
-    destroyBoxes(boxesDiv.children.length)
-    var numberCreate = document.querySelector('input').value
-    // console.log("sasa")
-    // console.log(numberCreate);
-    if (numberCreate < 101 && numberCreate > 0) {
-        function createBoxes(numberCreate) {
-            var length = 30
-            for (let i = 0; i < numberCreate; i++) {
-                boxesDiv.insertAdjacentHTML(
-                    'afterbegin',
-                    `<div style=" background-color:${getRandomHexColor()};   width:${length}px ;height: ${length}px; ;"></div>`
-                )
-                length += 10
-            }
+buttonCreate.addEventListener('click', () => {
+    let cubNumbers = document.querySelector('input').value;
+    if (cubNumbers < 101 && cubNumbers > 0) {
+        var length = 30
+        for (let i = 0; i < cubNumbers; i++) {
+            boxesDiv.insertAdjacentHTML(
+                'afterbegin',
+                `<div style=" background-color:${getRandomHexColor()};   width:${length}px ;height: ${length}px; ;"></div>`
+            )
+            length += 10
         }
-        createBoxes(numberCreate)
     }
-})
+    }
+)
 
 buttonDestroy.addEventListener('click', () => {
-    console.log(boxesDiv.children.length)
-    destroyBoxes(boxesDiv.children.length)
+    boxesDiv.innerHTML = "";
 })
