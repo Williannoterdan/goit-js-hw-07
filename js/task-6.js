@@ -32,7 +32,7 @@ buttonCreate.addEventListener('click', (event) => {
             for (let i = 0; i < numberCreate; i++) {
                 boxesDiv.insertAdjacentHTML(
                     'afterbegin',
-                    `<div class="death" style="display: flex; background-color:${getRandomHexColor()};   width:${length}px ;height: ${length}px; ;"></div>`
+                    `<div style=" background-color:${getRandomHexColor()};   width:${length}px ;height: ${length}px; ;"></div>`
                 )
                 length += 10
             }
@@ -41,7 +41,7 @@ buttonCreate.addEventListener('click', (event) => {
     }
 })
 
-buttonDestroy.addEventListener('click', (event) => {
+buttonDestroy.addEventListener('click', () => {
     console.log(boxesDiv.children.length)
     destroyBoxes(boxesDiv.children.length)
 })

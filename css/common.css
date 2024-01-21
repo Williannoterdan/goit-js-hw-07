@@ -297,17 +297,9 @@ button[data-destroy]:hover {
 }
 
 #boxes{
-margin-top: 515px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column-reverse;
-  position: relative;
-  left: 0;
-  top: 0;
+  justify-content: left;
+  flex-direction: row-reverse;
+gap: 12px;
 }
-#boxes div {
-  position: absolute;
-  
 
-}

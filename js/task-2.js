@@ -26,12 +26,10 @@ const images = [
 ]
 
 const gallery = document.querySelector('.gallery')
-gallery.insertAdjacentHTML(
-    'afterbegin',
-    images
-        .map(
-            (x, index) =>
-                `<li class="task2-LiSt1" ><img tabindex="${index}" src="${x.url}" alt="${x.alt}" class="task2-ImgSt1" focus-atribut${index}></li>`
-        )
-        .join('')
-)
+const imageHtml = images
+    .map(
+        (item) =>
+            `<li class="task2-LiSt1" ><img src="${item.url}" alt="${item.alt}" class="task2-ImgSt1"></li>`
+    )
+    .join('')
+gallery.insertAdjacentHTML('afterbegin', imageHtml);
