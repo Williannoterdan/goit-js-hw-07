@@ -17,10 +17,11 @@ console.log(boxesDiv.children)
 buttonCreate.addEventListener('click', () => {
     let cubNumbers = document.querySelector('input').value;
     if (cubNumbers < 101 && cubNumbers > 0) {
+        boxesDiv.innerHTML = '';
         var length = 30
         for (let i = 0; i < cubNumbers; i++) {
             boxesDiv.insertAdjacentHTML(
-                'afterbegin',
+                'beforeend',
                 `<div style=" background-color:${getRandomHexColor()};   width:${length}px ;height: ${length}px; ;"></div>`
             )
             length += 10
